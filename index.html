@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LUDO Battle</title>
+    <link rel="stylesheet" href="gameStyle.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="PicsArt_06-25-11.20.55.png" type="image/png"/>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
+
+</head>
+<!--audios-->
+
+<body>
+ <audio id="diceSound">
+  <source src="MANYDICE.wav" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<audio id="winSound">
+    <source src="win.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+<audio id="killsound">
+  <source src="mixkit-player-losing-or-failing-2042.wav" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+
+<audio id="moveSound">
+  <source src="mixkit-player-jumping-in-a-video-game-2043.wav" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<audio id="startsound">
+    <source src="mixkit-player-select-notification-2037.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+
+  <div class="idle">
+   <div class="welcome">
+       <div class="elements">
+         
+           <div class="logo">
+               <img src="PicsArt_06-25-11.20.55.png" class="logo">
+           </div>
+           <div class="name">
+               <input type="text" class="ri" placeholder="player 1 name...">
+               <input type="text" class="yi" placeholder="player 2 name...">
+               <input type="text" class="gi" placeholder="player 3 name...">
+               <input type="text" class="bi" placeholder="player 4 name..."><br>
+               <button class="play">Start</button><br>
+             
+               <span class="note">V1.0</span>
+           </div>
+           <div class="footer">
+               Developed By: Vishak KR -2021
+               <a style="color: aqua;" href="https://vishakkr.github.io/VishakKR/">
+                ©Vishak KR</a>
+           </div>
+       </div>
+   </div>
+    <div class="mainmenu">
+       <div class="table">
+           <div class="playerinfo">
+               <span class="playername">
+                  Player 1 
+               </span>
+               <div class="r-dice" onclick="dice(this,0)">
+                   0
+               </div>
+           </div>
+           <div class="playerinfo">
+               
+               <div class="b-dice" onclick="dice(this,3)">
+                   0
+               </div>
+               <span class="playername">
+                  Player 4 
+               </span>
+           </div>
+       </div>
+       
+       <div class="table1">
+           <div class="playerinfo">
+               <span class="playername1">
+                  Player 1 
+               </span>
+               <div class="r-dice" onclick="dice(this,0)">
+                   0
+               </div>
+           </div>
+           <div class="playerinfo">
+                <span class="playername1">
+                  Player 2 
+               </span>
+               <div class="g-dice" onclick="dice(this,1)">
+                   0
+               </div>
+              
+           </div>
+       </div>
+        <div class="ludo">
+            <div class="red">
+                <div class="playzone">
+                <div class="player"><span onclick="moved(this,0)" class="rp r material-icons">circle</span></div>
+                <div class="player"><span onclick="moved(this,1)" class="rp r material-icons">circle</span></div>
+                <div class="player"><span onclick="moved(this,2)" class="rp r material-icons">circle</span></div>
+                <div class="player"><span onclick="moved(this,3)" class="rp r material-icons">circle</span></div>
+                </div>
+            </div>
+            <div class="move1 move"></div>
+            <div class="move1 move"></div>
+            <div class="move1 move"></div>
+            <div class="green">
+                <div class="playzone">
+                <div class="player"><span onclick="movegreen(this,0)" class="rp g material-icons">circle</span></div>
+                <div class="player"><span onclick="movegreen(this,1)" class="rp g material-icons">circle</span></div>
+                <div class="player"><span onclick="movegreen(this,2)" class="rp g material-icons">circle</span></div>
+                <div class="player"><span onclick="movegreen(this,3)" class="rp g material-icons">circle</span></div>
+                </div>
+            </div>
+            
+            <div class="move1 move"></div>
+            <div class="move1 green-safe"></div>
+            <div class="move1 gstop"></div>
+            <div class="move1 move rstop"></div>
+            <div class="move1 green-safe"></div>
+            <div class="move1 move"></div>
+            <div class="move1 move"></div>
+            <div class="move1 green-safe"></div>
+            <div class="move1 move"></div>
+            <div class="move1 move"></div>
+            <div class="move1 green-safe"></div>
+            <div class="move1 move"></div>
+            <div class="move1 move"></div>
+            <div class="move1 green-safe"></div>
+            <div class="move1 move"></div>
+            
+            <div class="move1 move"></div>
+            <div class="move1 rstop"></div>
+            <div class="move1 move"></div>
+            <div class="move1 move"></div>
+            <div class="move1 move"></div>
+            <div class="move1 move"></div>
+            
+            <div class="centerbox"></div>
+            
+            <div class="move1 move"></div>
+            <div class="move1 move"></div>
+            <div class="move1 move"></div>
+            <div class="move1 move gstop"></div>
+            <div class="move1 move"></div>
+            <div class="move1 move"></div>
+            
+            <div class="move1 move"></div>
+            <div class="move1 red-safe"></div>
+            <div class="move1 red-safe"></div>
+            <div class="move1 red-safe"></div>
+            <div class="move1 red-safe"></div>
+            <div class="move1 red-safe"></div>
+            
+            <div class="move1 yellow-safe"></div>
+            <div class="move1 yellow-safe"></div>
+            <div class="move1 yellow-safe"></div>
+            <div class="move1 yellow-safe"></div>
+            <div class="move1 yellow-safe"></div>
+            <div class="move1 move"></div>
+            
+            <div class="move1 move"></div>
+            <div class="move1 move"></div>
+            <div class="move1 move bstop"></div>
+            <div class="move1 move"></div>
+            <div class="move1 move"></div>
+            <div class="move1 move"></div>
+            
+            <div class="move1 move"></div>
+            <div class="move1 move"></div>
+            <div class="move1 move"></div>
+            <div class="move1 move"></div>
+            <div class="move1 ystop"></div>
+            <div class="move1 move"></div>
+            
+            
+            
+            
+            <div class="blue">
+                <div class="playzone">
+                <div class="player"><span onclick="moveblue(this,0)" class="rp b b material-icons">circle</span></div>
+                <div class="player"><span onclick="moveblue(this,1)" class="rp b b material-icons">circle</span></div>
+                <div class="player"><span onclick="moveblue(this,2)" class="rp b b material-icons">circle</span></div>
+                <div class="player"><span onclick="moveblue(this,3)" class="rp b b material-icons">circle</span></div>
+                </div>
+            </div>
+            <div class="move1 move"></div>
+            <div class="move1 blue-safe"></div>
+            <div class="move1 move"></div>
+            <div class="yellow">
+                <div class="playzone">
+                <div class="player"><span onclick="moveyellow(this,0)" class="rp y material-icons">circle</span></div>
+                <div class="player"><span onclick="moveyellow(this,1)" class="rp y material-icons">circle</span></div>
+                <div class="player"><span onclick="moveyellow(this,2)" class="rp y material-icons">circle</span></div>
+                <div class="player"><span onclick="moveyellow(this,3)" class="rp y material-icons">circle</span></div>
+                </div>
+            </div>
+            
+            <div class="move1 move"></div>
+            <div class="move1 blue-safe"></div>
+            <div class="move1 move"></div>
+            <div class="move1 move"></div>
+            <div class="move1 blue-safe"></div>
+            <div class="move1 move"></div>
+            <div class="move1 move"></div>
+            <div class="move1 blue-safe"></div>
+            <div class="move1 move ystop"></div>
+            <div class="move1 bstop"></div>
+            <div class="move1 blue-safe"></div>
+            <div class="move1 move"></div>
+            <div class="move1 move"></div>
+            <div class="move1 move"></div>
+            <div class="move1 move"></div>
+        </div>
+        <div class="table">
+           <div class="playerinfo">
+               <span class="playername">
+                  Player 3
+               </span>
+               <div class="g-dice" onclick="dice(this,1)">
+                   0
+               </div>
+           </div>
+           <div class="playerinfo">
+               
+               <div class="y-dice" onclick="dice(this,2)">
+                   0
+               </div>
+               <span class="playername">
+                  Player 2
+               </span>
+           </div>
+       </div>
+       
+       <div class="table1">
+           <div class="playerinfo">
+               
+               <div class="b-dice" onclick="dice(this,3)">
+                   0
+               </div>
+               <span class="playername1">
+                  Player 4 
+               </span>
+           </div>
+           <div class="playerinfo">
+               
+               <div class="y-dice" onclick="dice(this,2)">
+                   0
+               </div>
+               <span class="playername1">
+                  Player 2
+               </span>
+           </div>
+       </div>
+    </div>
+    <script>
+//    $movecount = document.getElementsByClassName("move1");
+//        for(i=0;i<$movecount.length;i++){
+//            $movecount[i].innerHTML=i;
+//        }
+    </script>
+
+<script src="gameFn.js"></script>
+    </div>
+</body>
+</html>
